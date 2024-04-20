@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import styles from './scoresheet.module.css';
 
 const Scoresheet = () => {
-  const positions = ['left', 'right', 'left', 'right']; // Alternating positions for each quadrant
-  const [values, setValues] = useState([25, 45, 60, 85]); // Updated example progress values to demonstrate color changes
+  const [values, setValues] = useState([25, 45, 60, 85]); // Example progress values
   const labels = ['Correctness', 'Relevancy', 'Clarity', 'Grammar'];
   const explanations = [
-    'Explanation for correctness',
+    'Explanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctnessExplanation for correctness',
     'Explanation for relevancy',
     'Explanation for clarity',
     'Explanation for grammar'
@@ -17,7 +16,7 @@ const Scoresheet = () => {
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
 
-  // Function to determine color based on value
+  // Function to determine the color based on value
   const getColor = (value) => {
     if (value < 30) return 'red';
     else if (value < 50) return 'orange';
@@ -26,18 +25,20 @@ const Scoresheet = () => {
     else return 'green';
   };
 
+  // Function to determine text expansion direction based on position
+  const getTextExpansionClass = (index) => {
+    return index % 2 === 0 ? styles.expandedTextRight : styles.expandedTextLeft;
+  };
+
   return (
-    <div className={styles.container}>  
+    <div className={styles.container}>
       <h1 className={styles.h1}>Score Report:</h1>
       <div className={styles.quadrants}>
         {labels.map((label, index) => (
           <div className={styles.quadrant} key={label}>
-            <svg
-              height={radius * 2}
-              width={radius * 2}
-            >
+            <svg height={radius * 2} width={radius * 2}>
               <circle
-                stroke={getColor(values[index])} // Applying the color based on value
+                stroke={getColor(values[index])}
                 fill="transparent"
                 strokeWidth={stroke}
                 strokeDasharray={circumference + ' ' + circumference}
@@ -50,9 +51,9 @@ const Scoresheet = () => {
                 {`${values[index]}%`}
               </text>
             </svg>
-            <div className={`${styles.square} ${styles[positions[index]]}`}>
+            <div className={`${styles.square}`}>
               {label}
-              <p className={`${styles.expandedText} ${styles[positions[index]]}`}>
+              <p className={`${styles.expandedText} ${getTextExpansionClass(index)}`}>
                 {explanations[index]}
               </p>
             </div>

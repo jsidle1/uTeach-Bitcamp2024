@@ -18,9 +18,7 @@
     background-color: rgb(249, 249, 249); /* Light grey background for the whole container */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    max-width: 960px; /* Limit the width for better readability */
-    margin: 20px auto; /* Centering the container */
+    max-width: 1960px; /* Limit the width for better readability */
   }
   
   .quadrants {
@@ -36,7 +34,8 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #ffffff; /* White background for each quadrant */
+    width: 10%;
+    background-color: #ffffff94; /* White background for each quadrant */
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   }
@@ -50,25 +49,13 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transformation and shadow on hover */
   }
   
   .square:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-  
-  .expandedText {
-    position: absolute;
-    bottom: -60px; /* More space to clear the hover effect */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 90%; /* Ensures it doesn't overflow the parent container */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   
   .navigation {
@@ -92,3 +79,29 @@
     background-color: #0056b3; /* Darker blue on hover for better interaction feedback */
   }
   
+  .expandedText {
+    position: absolute;
+    width: 300px; 
+    bottom: 0;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean, modern sans-serif font */
+    display: none; /* Initially hidden, shown on hover */
+  }
+  
+  .expandedTextLeft {
+    left: 100%; /* Expand to the left */
+    transform: translateX(50px) translateY(-25px); /* Adjust positioning */
+  }
+  
+  .expandedTextRight {
+    right: 100%; /* Expand to the right */
+    transform: translateX(-50px) translateY(-25px); /* Adjust positioning */
+  }
+  
+  .square:hover .expandedText {
+    display: block;
+  }
