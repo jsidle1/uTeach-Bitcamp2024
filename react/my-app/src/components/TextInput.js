@@ -24,6 +24,33 @@ const TextInput = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputValue);
+        console.log("running")
+        fetch("http://127.0.0.1:5000/temp-gen-script", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(inputValue)
+        }).then(
+            res => res.blob()
+        ).then(
+            blob => {
+                console.log("DOWNLOADING")
+
+                const url = window.URL.createObjectURL(new Blob([blob]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', 'presentation_LeanAi.pptx'); // or any other filename
+                // Append to html link element page
+                document.body.appendChild(link);
+                // Force download
+                link.click();
+                // Clean up and remove the link
+                link.parentNode.removeChild(link);
+                console.log("DOWNLOADED")
+            }
+        )
+            .catch(err => console.error("Couldn't download pptx file", err))
     };
 
     return (
