@@ -1,0 +1,94 @@
+.h1 {
+    font-size: 3rem; /* Sets a large, readable font size */
+    color: #34568B; /* A rich blue color, adjust as needed */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean, modern sans-serif font */
+    text-align: center; /* Centers the header text on the page */
+    margin-bottom: 20px; /* Bottom margin for spacing to elements below */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+    letter-spacing: 0.05em; /* Slight spacing between letters */
+    text-transform: capitalize; /* Capitalizes the first letter of each word */
+    border-bottom: 3px solid #D3D3D3; /* Adds a subtle line under the text */
+  }
+  
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(249, 249, 249); /* Light grey background for the whole container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 960px; /* Limit the width for better readability */
+    margin: 20px auto; /* Centering the container */
+  }
+  
+  .quadrants {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px; /* Adds space between quadrants */
+    justify-content: center;
+  }
+  
+  .quadrant {
+    flex: 1 1 45%; /* Allows two items per row, adjusts based on available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff; /* White background for each quadrant */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  
+  .square {
+    width: 100%;
+    height: 100px; /* Fixed height for uniformity */
+    border: 2px solid #34568B; /* Lighter border */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transformation and shadow on hover */
+  }
+  
+  .square:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .expandedText {
+    position: absolute;
+    bottom: -60px; /* More space to clear the hover effect */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 90%; /* Ensures it doesn't overflow the parent container */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Bootstrap blue for visibility */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #0056b3; /* Darker blue on hover for better interaction feedback */
+  }
+  
