@@ -1,0 +1,16 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "Create a PowerPoint presentation template about any topic of interest."
+    },
+    {
+      "role": "user",
+      "content": "I want to learn about / interested in artificial intelligence for a presentation"
+    },
+    {
+      "role": "assistant",
+      "content": "{\"title\": \"Artificial Intelligence\", \"slides\": [{\"slide_number\": 1, \"title\": \"Introduction\", \"content\": \"Introduce the field of Artificial Intelligence (AI), its history, and its fundamental concepts. Explain why AI is a pivotal innovation in today's technological landscape.\"}, {\"slide_number\": 2, \"title\": \"Core Technologies\", \"content\": \"Discuss the core technologies behind AI including machine learning, deep learning, and neural networks. Provide examples of how these technologies are applied.\"}, {\"slide_number\": 3, \"title\": \"AI Applications\", \"content\": \"Highlight various applications of AI across different sectors such as healthcare, finance, automotive, and entertainment. Discuss specific case studies.\"}, {\"slide_number\": 4, \"title\": \"Ethical Considerations\", \"content\": \"Address the ethical considerations and debates surrounding AI, including privacy concerns, bias in AI algorithms, and the future of employment.\"}, {\"slide_number\": 5, \"title\": \"Future of AI\", \"content\": \"Discuss the future trends in AI, potential breakthroughs, and how it might evolve over the coming decades. Encourage the audience to think about how AI will shape the future of society.\"}]}"
+    }
+  ]
+}

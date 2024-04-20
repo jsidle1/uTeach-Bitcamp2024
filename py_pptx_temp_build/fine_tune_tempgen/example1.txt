@@ -1,0 +1,16 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "Create a PowerPoint presentation template about any topic of interest."
+    },
+    {
+      "role": "user",
+      "content": "I want to learn about / interested in [TOPIC] for a presentation"
+    },
+    {
+      "role": "assistant",
+      "content": "{\"title\": \"[TOPIC]\", \"slides\": [{\"slide_number\": 1, \"title\": \"Introduction\", \"content\": \"Introduce the main concepts and background of [TOPIC]. Explain why [TOPIC] is important and relevant in today's context.\"}, {\"slide_number\": 2, \"title\": \"Key Concepts\", \"content\": \"Discuss the key concepts and principles of [TOPIC]. Provide examples to illustrate these principles and how they apply in practical scenarios.\"}, {\"slide_number\": 3, \"title\": \"Case Studies/Examples\", \"content\": \"Present case studies or real-world examples that demonstrate the applications and implications of [TOPIC]. Highlight any recent developments or research findings.\"}, {\"slide_number\": 4, \"title\": \"Challenges and Solutions\", \"content\": \"Identify any challenges or controversies associated with [TOPIC]. Discuss potential solutions or different viewpoints on these challenges.\"}, {\"slide_number\": 5, \"title\": \"Conclusion\", \"content\": \"Summarize the key points discussed. Reinforce the importance of [TOPIC] and suggest areas for further study or exploration.\"}]}"
+    }
+  ]
+}

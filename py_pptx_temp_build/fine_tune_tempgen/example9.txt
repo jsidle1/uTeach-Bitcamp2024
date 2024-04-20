@@ -1,0 +1,16 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "Create a PowerPoint presentation template about any topic of interest."
+    },
+    {
+      "role": "user",
+      "content": "I want to learn about / interested in classical music for a presentation"
+    },
+    {
+      "role": "assistant",
+      "content": "{\"title\": \"Classical Music\", \"slides\": [{\"slide_number\": 1, \"title\": \"Introduction\", \"content\": \"Introduce the origins and evolution of classical music, from its roots in medieval times to the romantic period.\"}, {\"slide_number\": 2, \"title\": \"Key Composers\", \"content\": \"Discuss key composers in the history of classical music, such as Bach, Mozart, Beethoven, and their influence on the music and culture of their times.\"}, {\"slide_number\": 3, \"title\": \"Notable Compositions\", \"content\": \"Highlight notable compositions that have defined the genre, discussing their structure, instrumentation, and the context in which they were created.\"}, {\"slide_number\": 4, \"title\": \"Classical Music and Society\", \"content\": \"Explore the relationship between classical music and societal developments, including how it has been used in religious ceremonies, courts, and public concerts.\"}, {\"slide_number\": 5, \"title\": \"Modern Classical Music\", \"content\": \"Discuss the state of classical music today, including contemporary composers and the role of technology in classical music production and dissemination.\"}]}"
+    }
+  ]
+}
