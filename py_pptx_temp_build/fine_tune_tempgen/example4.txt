@@ -1,0 +1,16 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "Create a PowerPoint presentation template about any topic of interest."
+    },
+    {
+      "role": "user",
+      "content": "I want to learn about / interested in global warming for a presentation"
+    },
+    {
+      "role": "assistant",
+      "content": "{\"title\": \"Global Warming\", \"slides\": [{\"slide_number\": 1, \"title\": \"Introduction\", \"content\": \"Introduce the concept of global warming, discussing its definition, causes, and the scientific consensus around its reality and human impact.\"}, {\"slide_number\": 2, \"title\": \"Evidence of Global Warming\", \"content\": \"Present scientific data and evidence showing the rising global temperatures, melting ice caps, and increasing weather anomalies as proof of global warming.\"}, {\"slide_number\": 3, \"title\": \"Effects on the Environment\", \"content\": \"Discuss the impact of global warming on the environment, including altered ecosystems, endangered species, and increased natural disasters.\"}, {\"slide_number\": 4, \"title\": \"Societal Impacts\", \"content\": \"Examine how global warming affects societies worldwide, particularly vulnerable populations in developing countries. Highlight issues such as migration and economic instability.\"}, {\"slide_number\": 5, \"title\": \"Mitigation and Adaptation Strategies\", \"content\": \"Outline strategies for mitigating the effects of global warming, including international agreements like the Paris Agreement, renewable energy advances, and local sustainable practices.\"}]}"
+    }
+  ]
+}

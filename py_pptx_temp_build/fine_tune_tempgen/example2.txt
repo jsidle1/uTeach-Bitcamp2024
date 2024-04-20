@@ -1,0 +1,16 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "Create a PowerPoint presentation template about any topic of interest."
+    },
+    {
+      "role": "user",
+      "content": "I want to learn about / interested in renewable energy for a presentation"
+    },
+    {
+      "role": "assistant",
+      "content": "{\"title\": \"Renewable Energy\", \"slides\": [{\"slide_number\": 1, \"title\": \"Introduction\", \"content\": \"Introduce the concept of renewable energy, outlining its importance in combating climate change and reducing dependence on fossil fuels.\"}, {\"slide_number\": 2, \"title\": \"Types of Renewable Energy\", \"content\": \"Discuss the various types of renewable energy sources such as solar, wind, hydro, and biomass. Provide examples of how each technology works.\"}, {\"slide_number\": 3, \"title\": \"Global Impact\", \"content\": \"Present statistics and case studies that show the impact of renewable energy adoption worldwide. Highlight countries leading in renewable energy usage.\"}, {\"slide_number\": 4, \"title\": \"Challenges and Innovations\", \"content\": \"Identify challenges in adopting renewable energy, such as cost and technological limitations. Discuss recent innovations that address these challenges.\"}, {\"slide_number\": 5, \"title\": \"Future Trends\", \"content\": \"Summarize current trends in renewable energy, including growth projections and potential technological breakthroughs. Encourage further research and adoption in this field.\"}]}"
+    }
+  ]
+}
