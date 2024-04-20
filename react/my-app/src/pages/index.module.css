@@ -1,0 +1,26 @@
+/* index.css */
+.container {
+  text-align: center;
+}
+
+.title {
+  color: #116fdb;
+}
+
+.paragraph {
+  margin: 10px 0;
+}
+
+.button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
