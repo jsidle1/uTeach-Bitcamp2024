@@ -15,10 +15,10 @@ cors = CORS(app)
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
-    if 'file' not in request.files:
+    if 'pptFile' not in request.files:
         print("here1")
         return jsonify({'error': 'No file part'}), 400
-    file = request.files['file']
+    file = request.files['pptFile']
     if file.filename == '':
         print("here2")
         return jsonify({'error': 'No selected file'}), 400
