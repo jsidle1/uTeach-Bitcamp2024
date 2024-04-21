@@ -1,41 +1,40 @@
 import speech_recognition as sr
-import pyttsx3 
- 
-r = sr.Recognizer() 
- 
-# Function to convert text to speech
-def SpeakText(command):
-    engine = pyttsx3.init()
-    engine.say(command) 
-    engine.runAndWait()
-     
-# loop while waiting for the user to speak 
-while(1):    
-     
-    # Exception handling to handle
-    # exceptions at the runtime
+from flask import Flask
+from scoreSpeech import scoreSpeech
+
+# Initialize recognizer class (for recognizing the speech)
+r = sr.Recognizer()
+
+app = Flask(__name__)
+
+@app.route('/get-speech-scores', methods=['GET'])
+def audio_to_text(audio_file_path):
+    with sr.AudioFile(audio_file_path) as source:
+        audio_text = r.record(source)
+    
+    # recoginize_() method will throw a request error if the API is unreachable, hence using exception handling
+    
     try:
-         
-        # use the microphone as source for input.
-        with sr.Microphone() as source2:
-             
-            # wait for a second to let the recognizer
-            # adjust the energy threshold based on
-            # the surrounding noise level 
-            r.adjust_for_ambient_noise(source2, duration=0.2)
-             
-            #listens for the user's input 
-            audio2 = r.listen(source2)
-             
-            # Using google to recognize audio
-            MyText = r.recognize_google(audio2)
-            MyText = MyText.lower()
- 
-            print("Did you say ",MyText)
-            SpeakText(MyText)
-             
+        # using google speech recognition
+        text = r.recognize_google(audio_text)
+        print('Converting audio transcripts into text ...')
+        return text
+
     except sr.RequestError as e:
         print("Could not request results; {0}".format(e))
-         
+        return None
+
     except sr.UnknownValueError:
-        print("unknown error occurred")
+        print("Google Speech Recognition could not understand audio")
+        return None
+    
+# Path to your audio file
+audio_file = "path_to_your_audio_file.wav"
+
+# Call the function with the path to your audio file
+result_text = audio_to_text(audio_file)
+
+scores = []
+scores.append([(scoreSpeech(result_text, "correctness")), (scoreSpeech(result_text, "depth of topics")), (scoreSpeech(result_text, "grammar"))])
+
+

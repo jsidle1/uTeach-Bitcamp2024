@@ -1,7 +1,10 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { useResults } from '../contexts/ResultsContext';
 import axios from 'axios';
+=======
+>>>>>>> afadef8cc76c35c345c0d7b89cf88c471b892833
 import styles from '@/pages/presentation-page.module.css'
 import Link from 'next/link';
 
@@ -9,7 +12,6 @@ function PresentationPage() {
     const router = useRouter();
     const [pptFile, setPptFile] = useState(null); // State to store PowerPoint file
     const [audioFile, setAudioFile] = useState(null); // State to store audio file
-    const { results, setResults } = useResults(); // the json return from gpt 
 
     // Function to handle PowerPoint file input change
     const handlePptFileChange = (event) => {
@@ -118,7 +120,10 @@ function PresentationPage() {
                     <button type="submit" className={styles.uploadBtn}>Upload Files</button>
                 </form>
             </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> afadef8cc76c35c345c0d7b89cf88c471b892833
         </div>
     );
 }
