@@ -17,20 +17,20 @@ const Home = () => {
             method: 'POST',
             body: formData,
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     };
 
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Upload a PowerPoint</h1>
             <p className={styles.paragraph}>Submit your completed PowerPoint here:</p>
-            <FileUploader 
+            <FileUploader
                 accept=".ppt, .pptx"
                 onFileSelect={handleFileSelect}
                 onSubmit={handleFileSubmit}

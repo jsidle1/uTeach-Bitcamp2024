@@ -37,4 +37,3 @@ export const config = {
         bodyParser: false, // Disabling body parsing because we're handling it with multer
     },
 };
-
