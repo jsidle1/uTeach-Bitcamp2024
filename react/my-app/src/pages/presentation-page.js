@@ -48,7 +48,7 @@ function PresentationPage() {
                 </div>
                 <div>
                     <label htmlFor="audioFile">Audio File:</label>
-                    <input type="file" id="audioFile" accept="audio/*" onChange={handleAudioFileChange} required />
+                    <input type="file" id="audioFile" accept="audio/*" onChange={handleAudioFileChange} />
                 </div>
                 <button type="submit" style={{ marginTop: "20px" }}>Upload Files</button>
             </form>
