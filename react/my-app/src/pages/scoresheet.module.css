@@ -3,7 +3,7 @@
     color: #34568B; /* A rich blue color, adjust as needed */
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean, modern sans-serif font */
     text-align: center; /* Centers the header text on the page */
-    margin-bottom: 20px; /* Bottom margin for spacing to elements below */
+    margin-bottom: 30px; /* Bottom margin for spacing to elements below */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
     letter-spacing: 0.05em; /* Slight spacing between letters */
     text-transform: capitalize; /* Capitalizes the first letter of each word */
@@ -37,9 +37,9 @@
     width: 10%;
     background-color: #ffffff94; /* White background for each quadrant */
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.415);
   }
-  
+
   .square {
     width: 100%;
     height: 100px; /* Fixed height for uniformity */
@@ -55,7 +55,7 @@
   
   .square:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(10, 10, 10, 0.786);
   }
   
   .navigation {
@@ -78,28 +78,42 @@
   .button:hover {
     background-color: #0056b3; /* Darker blue on hover for better interaction feedback */
   }
+
+  .restart {
+    padding: 10px 20px;
+    background-color: #ee0b0b; /* Bootstrap blue for visibility */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .restart:hover {
+    background-color: #a80808; /* Darker blue on hover for better interaction feedback */
+  }
   
   .expandedText {
     position: absolute;
-    width: 300px; 
+    width: 320px; 
     bottom: 0;
     background-color: white;
     padding: 5px;
     border: 1px solid black;
     border-radius: 4px;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean, modern sans-serif font */
     display: none; /* Initially hidden, shown on hover */
   }
   
   .expandedTextLeft {
     left: 100%; /* Expand to the left */
-    transform: translateX(50px) translateY(-25px); /* Adjust positioning */
+    transform: translateX(30px) translateY(-25px); /* Adjust positioning */
   }
   
   .expandedTextRight {
     right: 100%; /* Expand to the right */
-    transform: translateX(-50px) translateY(-25px); /* Adjust positioning */
+    transform: translateX(-30px) translateY(-25px); /* Adjust positioning */
   }
   
   .square:hover .expandedText {
