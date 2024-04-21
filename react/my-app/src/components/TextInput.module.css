@@ -9,7 +9,7 @@
     width: 700px; /* Width of the text box */
     resize: none;
     border: 3px solid black;
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .submitButton {

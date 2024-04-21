@@ -1,7 +1,6 @@
 // pages/presentation-page.js
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import axios from 'axios';
 import styles from '@/pages/presentation-page.module.css'
 
 function PresentationPage() {
