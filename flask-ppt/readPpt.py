@@ -24,11 +24,9 @@ def get_scores():
     # Score each extracted text
     scores = []
     for slide_text in pptText:
-        score = scoreText(slide_text, "correctness")
-        scores.append({'text': slide_text, 'score': score})
+        scores.append([(scoreText(slide_text, "correctness")), (scoreText(slide_text, "relevance")), (scoreText(slide_text, "clarity")), (scoreText(slide_text, "grammar"))])
     
-    # Return the scores as JSON
-    return jsonify(scores)
+    return scores
 
 if __name__ == '__main__':
     app.run(debug=True)
