@@ -1,8 +1,10 @@
 // pages/presentation-page.js
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import axios from 'axios';
 
 function PresentationPage() {
+    const router = useRouter();
     const [pptFile, setPptFile] = useState(null); // State to store PowerPoint file
     const [audioFile, setAudioFile] = useState(null); // State to store audio file
 
@@ -32,6 +34,7 @@ function PresentationPage() {
             });
             console.log('Files uploaded successfully:', response.data);
             alert('Files uploaded successfully!');
+            router.push('/scoresheet');
         } catch (error) {
             console.error('Error uploading files:', error);
             alert('Failed to upload files.');
