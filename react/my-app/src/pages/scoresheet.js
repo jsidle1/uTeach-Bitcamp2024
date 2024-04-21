@@ -3,17 +3,15 @@ import styles from './scoresheet.module.css';
 import Link from 'next/link';
 
 const Scoresheet = () => {
-  const slideValues = [[24, 45, 60, 85], [24, 42, 58, 1], [24, 45, 2, 15]];
+  const slideValues = [
+    [[24, "Explanation for correctness 1"], [45, "Explanation for relevancy 1"], [65, "Explanation for clarity 1"], [85, "Explanation for grammar 1"]],
+    [[84, "Explanation for correctness 2"], [32, "Explanation for relevancy 2"], [1, "Explanation for clarity 2"], [55, "Explanation for grammar 2"]],
+    [[24, "Explanation for correctness 3"], [45, "Explanation for relevancy 3"], [65, "Explanation for clarity 3"], [85, "Explanation for grammar 3"]],
+  ];
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [values, setValues] = useState(slideValues[currentSlideIndex]);
 
   const labels = ['Correctness', 'Relevancy', 'Clarity', 'Grammar'];
-  const explanations = [
-    'Explanation for correctness',
-    'Explanation for relevancy',
-    'Explanation for clarity',
-    'Explanation for grammar'
-  ];
 
   const radius = 60;
   const stroke = 12;
@@ -64,27 +62,26 @@ const Scoresheet = () => {
       <div className={styles.quadrants}>
         {labels.map((label, index) => (
           <div className={styles.quadrant} key={label}>
-            <svg height={radius * 2.2} width={radius * 2}>
+            <svg height={radius * 2} width={radius * 2}>
               <circle
-                stroke={getColor(values[index])}
+                stroke={getColor(values[index][0])} // Use the score value for the color
                 fill="transparent"
                 strokeWidth={stroke}
                 strokeDasharray={circumference + ' ' + circumference}
-                style={{ strokeDashoffset: circumference - (values[index] / 100) * circumference, transition: 'stroke 0.5s ease-out' }}
+                style={{ strokeDashoffset: circumference - (values[index][0] / 100) * circumference }}
                 r={normalizedRadius}
                 cx={radius}
                 cy={radius}
-                filter=<feDropShadow dx="12" dy="14" stdDeviation="1" flood-opacity="0.7"/>
               />
 
-              <text x="50%" y="45%" textAnchor="middle" stroke={getColor(values[index])} strokeWidth="1px" dy=".3em" fill={getColor(values[index])}>
-                {`${values[index]}%`}
+              <text x="50%" y="50%" textAnchor="middle" stroke="#000" strokeWidth="1px" dy=".3em" fill="#000">
+                {`${values[index][0]}%`} 
               </text>
             </svg>
             <div className={styles.square}>
               {label}
               <p className={`${styles.expandedText} ${getTextExpansionClass(index)}`}>
-                {explanations[index]}
+                {values[index][1]} 
               </p>
             </div>
           </div>

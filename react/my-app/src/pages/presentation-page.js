@@ -6,7 +6,7 @@ import styles from '@/pages/presentation-page.module.css'
 
 function PresentationPage() {
     const router = useRouter();
-    const [pptFile, setPptFile] = useState(null); // State to store PowerPoint file
+    const [file, setPptFile] = useState(null); // State to store PowerPoint file
     const [audioFile, setAudioFile] = useState(null); // State to store audio file
 
     // Function to handle PowerPoint file input change
@@ -39,21 +39,23 @@ function PresentationPage() {
         event.preventDefault();
 
         const formData = new FormData();
-        formData.append('pptFile', pptFile);
+        formData.append('file', file);
         formData.append('audioFile', audioFile);
 
         try {
-            const response = await axios.post('/api/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
+            const response = await fetch("http://127.0.0.1:5000/upload", {
+                method: 'POST',
+                body: formData,
             });
-            console.log('Files uploaded successfully:', response.data);
-            alert('Files uploaded successfully!');
-            router.push('/scoresheet');
+            if (response.ok) {
+                const results = await response.json();
+                console.log(results)
+            } else {
+                alert('Failed to upload file');
+            }
         } catch (error) {
-            console.error('Error uploading files:', error);
-            alert('Failed to upload files.');
+            console.error('Error uploading file:', error);
+            alert('Error uploading file');
         }
     };
 

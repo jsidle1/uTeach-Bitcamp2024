@@ -19,9 +19,9 @@ const Home = () => {
         <div className={styles.right}>
           <div className={styles.description}>
             <h2>Use an Existing PowerPoint</h2>
-            <img src="\Slideshow.png" alt="Upload PowerPoint" className={styles.image}/>
+            <img src="/Slideshow.png" alt="Upload PowerPoint" className={styles.image}/>
             <p>Upload and score an existing presentation.</p>
-            <Link href="/upload-powerpoint">
+            <Link href="/presentation-page">
               <button className={styles.button}>Upload Existing</button>
             </Link>
           </div>
