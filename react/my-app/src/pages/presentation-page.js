@@ -1,8 +1,12 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { useResults } from '../contexts/ResultsContext';
 import axios from 'axios';
+=======
+>>>>>>> 629ba56085dd81e07b71aafb81a748fd8ed806f6
 import styles from '@/pages/presentation-page.module.css'
+import Link from 'next/link';
 
 function PresentationPage() {
     const router = useRouter();
@@ -67,9 +71,11 @@ function PresentationPage() {
 
     return (
         <div className={styles.background}>
-            <div className={styles.titleBox}>
-                <h1 className={styles.title}>uTeach</h1>
-            </div>
+            <Link href="/">
+                <div className={styles.titleBox}>
+                    <h1 className={styles.title}>uTeach</h1>
+                </div>
+            </Link>
             <div className={styles.uploadContainer}>
                 <h1 className={styles.uploadHeader}>Upload PowerPoint and Audio Files</h1>
                 <form onSubmit={handleSubmit}>

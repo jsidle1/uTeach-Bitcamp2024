@@ -1,6 +1,6 @@
 /* presentation-page.module.css */
 .uploadContainer {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255, 0.8);
     padding: 2em;
     border-radius: 10px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
@@ -33,7 +33,7 @@
   }
   
   .uploadBox:hover {
-    border-color: #a4b7c1;
+    border-color: #000000;
   }
   
   .fileInput {

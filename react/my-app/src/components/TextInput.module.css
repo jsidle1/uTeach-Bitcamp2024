@@ -9,19 +9,30 @@
     width: 700px; /* Width of the text box */
     resize: none;
     border: 3px solid black;
-    font-size: 20px;
+    font-size: 26px;
+    text-align: center;
+    align-items: center;
+    padding-top: 2%;
   }
 
   .submitButton {
-    margin-top: 10px; /* Adjust the value as needed */
-    padding: 10px 20px;
-    background-color: #0070f3;
+    padding: 0.6em 1.5em;
+    background-color: #007bff;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    width: 100px;
-    align-self: flex-end;
-}
+    transition: background-color 0.3s;
+    font-size: 1em;
+    width: 30%;
+    margin-top: 20px;
+  }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: flex-end; /* Aligns the button to the right */
+  }
+  
   .submitButton:hover {
     background-color: #0056b3;
   }

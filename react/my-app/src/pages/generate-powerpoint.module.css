@@ -7,7 +7,14 @@
 }
 
 .container {
-    text-align: center;
+  width: 60%; /* Adjust width as needed */
+  max-width: 960px; /* Maximum width */
+  margin: auto; /* Auto margins for horizontal centering */
+  padding: 20px; /* Padding for some breathing room */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* subtle shadow for depth */
+  border-radius: 8px; /* Slight rounding of corners */
+  background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+  backdrop-filter: blur(5px); /* Frosted glass effect */
   }
   
   .title {
@@ -16,20 +23,81 @@
   }
   
   .paragraph {
+    text-align: center;
+    color: black;
     margin: 10px 0;
-    font-size: 25px;
+    font-size: 22px;
   }
   
   .button {
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #0070f3;
+    padding: 0.6em 1.5em;
+    background-color: #007bff;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
+    font-size: 1em;
+    width: 100%;
   }
   
-  .button:hover {
+  .buttonhover {
     background-color: #0056b3;
+  }
+
+  .background {
+    background: linear-gradient(to bottom, #6a11cb 0%, #2575fc 100%);
+    min-height: 100vh; /* Full height of the viewport */
+    width: 100vw; /* Full width of the viewport */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align to the top */
+    padding-top: 50px; /* Add some space at the top */
+  }
+
+  .titleBox {
+    background-color: white;
+    padding: 10px 20px;
+    width: 150px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    border-radius: 15px; /* Soft rounded corners for the title box */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(50%, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: black;
+    margin: 40px;
+    transform: translate(0%, -20%);
+    text-align: center;
+    font-size: 32px;
+}
+
+.logo {
+  color: black;
+  margin: 0px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.header {
+  color: black;
+  margin: 0;
+  text-align: center;
+  font-size: 50px;
+}
+
+  .titleBox {
+    position: fixed; /* Fixed position on smaller screens */
+    top: 20px; /* Adjust top as per requirement */
+    left: 20px; /* Adjust left as per requirement */
+    transform: none; /* No need to translate since it's fixed */
   }
