@@ -1,6 +1,6 @@
 import os
 import openai
-openai.api_key = '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'
+openai.api_key = #Enter key
 
 def get_user_prompt():
     return input("Say a fact: ")

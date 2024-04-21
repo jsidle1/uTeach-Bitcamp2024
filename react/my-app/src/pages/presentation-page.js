@@ -1,7 +1,5 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import { useResults } from '../contexts/ResultsContext';
-import axios from 'axios';
 import styles from '@/pages/presentation-page.module.css'
 import Link from 'next/link';
 

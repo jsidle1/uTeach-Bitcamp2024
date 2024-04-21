@@ -4,7 +4,7 @@ import json
 
 
 def run_gpt_model():
-    openai.api_key = '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'
+    openai.api_key = #Enter key
 
     completion = openai.chat.completions.create(
         model = "ft:gpt-3.5-turbo-0125:personal::9G6A0hni",

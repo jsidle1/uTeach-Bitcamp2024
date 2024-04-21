@@ -1,3 +1,3 @@
-OPENAI API KEY : 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
+OPENAI API KEY : (Enter Key)
 
 impor

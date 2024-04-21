@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './scoresheet.module.css';
 import Link from 'next/link';
-import { useResults } from '../contexts/ResultsContext';
 
 const Scoresheet = () => {
   const [userInfo, setUserInfo] = useState({});
