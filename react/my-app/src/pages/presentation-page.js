@@ -2,6 +2,7 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import axios from 'axios';
+import styles from '@/pages/presentation-page.module.css'
 
 function PresentationPage() {
     const router = useRouter();
@@ -16,6 +17,21 @@ function PresentationPage() {
     // Function to handle audio file input change
     const handleAudioFileChange = (event) => {
         setAudioFile(event.target.files[0]);
+    };
+
+    // Drag and Drop handlers
+    const handleDragOver = (event) => {
+        event.preventDefault(); // Prevent default behavior (Prevent file from being opened)
+    };
+
+    const handleDrop = (event, fileType) => {
+        event.preventDefault();
+        const file = event.dataTransfer.files[0]; // Only consider the first file
+        if (fileType === 'ppt' && file.type.includes('presentation')) {
+            setPptFile(file);
+        } else if (fileType === 'audio' && file.type.startsWith('audio/')) {
+            setAudioFile(file);
+        }
     };
 
     // Function to handle form submission
@@ -42,19 +58,55 @@ function PresentationPage() {
     };
 
     return (
-        <div style={{ padding: "20px" }}>
-            <h1>Upload PowerPoint and Audio Files</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="pptFile">PowerPoint File:</label>
-                    <input type="file" id="pptFile" accept=".ppt,.pptx" onChange={handlePptFileChange} required />
-                </div>
-                <div>
-                    <label htmlFor="audioFile">Audio File:</label>
-                    <input type="file" id="audioFile" accept="audio/*" onChange={handleAudioFileChange} />
-                </div>
-                <button type="submit" style={{ marginTop: "20px" }}>Upload Files</button>
-            </form>
+        <div className={styles.background}>
+            <div className={styles.titleBox}>
+                <h1 className={styles.title}>uTeach</h1>
+            </div>
+            <div className={styles.uploadContainer}>
+                <h1 className={styles.uploadHeader}>Upload PowerPoint and Audio Files</h1>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="pptFile" className={styles.fileInputLabel}>PowerPoint File:</label>
+                    <div 
+                      className={styles.uploadBox} 
+                      onDragOver={handleDragOver} 
+                      onDrop={(e) => handleDrop(e, 'ppt')} 
+                      onClick={() => document.getElementById('pptFile').click()}>
+                        Drag and drop PowerPoint file here or click to browse
+                    </div>
+                    <input
+                      type="file"
+                      id="pptFile"
+                      accept=".ppt,.pptx"
+                      onChange={handlePptFileChange}
+                      className={styles.fileInput}
+                      required
+                    />
+
+                    <label htmlFor="audioFile" className={styles.fileInputLabel}>Audio File:</label>
+                    <div 
+                      className={styles.uploadBox} 
+                      onDragOver={handleDragOver} 
+                      onDrop={(e) => handleDrop(e, 'audio')} 
+                      onClick={() => document.getElementById('audioFile').click()}>
+                        Drag and drop audio file here or click to browse
+                    </div>
+                    <input
+                      type="file"
+                      id="audioFile"
+                      accept="audio/*"
+                      onChange={handleAudioFileChange}
+                      className={styles.fileInput}
+                    />
+
+                    {/* Uploaded files list */}
+                    <ul className={styles.fileList}>
+                        {pptFile && <li className={styles.fileListItem}><span>{pptFile.name}</span></li>}
+                        {audioFile && <li className={styles.fileListItem}><span>{audioFile.name}</span></li>}
+                    </ul>
+
+                    <button type="submit" className={styles.uploadBtn}>Upload Files</button>
+                </form>
+            </div>
         </div>
     );
 }

@@ -1,0 +1,129 @@
+/* presentation-page.module.css */
+.uploadContainer {
+    background-color: rgb(255, 255, 255);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+  .uploadHeader {
+    color: #333;
+    margin-bottom: 1em;
+  }
+  
+  .uploadBox {
+    background: #ffffff;
+    color: black;
+    border: 2px dashed #d0dbe5;
+    border-radius: 10px;
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    margin-bottom: 1em;
+  }
+  
+  .uploadBox:hover {
+    border-color: #a4b7c1;
+  }
+  
+  .fileInput {
+    display: none; /* Hide the default input */
+  }
+  
+  .fileList {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .fileListItem {
+    background: #e8eff5;
+    border: 1px solid #d0dbe5;
+    padding: 0.5em;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5em;
+  }
+  
+  .fileListItem span {
+    font-size: 0.9em;
+    color: #333;
+  }
+  
+  .uploadBtn {
+    padding: 0.6em 1.5em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+    width: 100%;
+  }
+  
+  .uploadBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style for the labels of the file inputs, in case you want to display them */
+  .fileInputLabel {
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 0.5em;
+    display: block;
+  }
+  
+  .titleBox {
+    background-color: white;
+    padding: 10px 20px;
+    width: 150px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    border-radius: 15px; /* Soft rounded corners for the title box */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(50%, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: black;
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+}
+
+  .titleBox {
+    position: fixed; /* Fixed position on smaller screens */
+    top: 20px; /* Adjust top as per requirement */
+    left: 20px; /* Adjust left as per requirement */
+    transform: none; /* No need to translate since it's fixed */
+  }
+
+  .background {
+    background: linear-gradient(to bottom, #f25a3ce9 0%, #ee9c29 100%);
+    min-height: 100vh; /* Full height of the viewport */
+    width: 100vw; /* Full width of the viewport */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align to the top */
+    padding-top: 50px; /* Add some space at the top */
+  }
