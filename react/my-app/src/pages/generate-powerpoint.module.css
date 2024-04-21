@@ -30,16 +30,18 @@
   }
   
   .button {
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #0070f3;
+    padding: 0.6em 1.5em;
+    background-color: #007bff;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
+    font-size: 1em;
+    width: 100%;
   }
   
-  .button:hover {
+  .buttonhover {
     background-color: #0056b3;
   }
 
@@ -73,9 +75,24 @@
 
 .title {
     color: black;
-    margin: 0;
+    margin: 40px;
+    transform: translate(0%, -20%);
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
+}
+
+.logo {
+  color: black;
+  margin: 0px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.header {
+  color: black;
+  margin: 0;
+  text-align: center;
+  font-size: 50px;
 }
 
   .titleBox {

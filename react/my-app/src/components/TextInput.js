@@ -9,7 +9,6 @@ const TextInput = () => {
         setInputValue(event.target.value);
     };
 
-    // Dynamically adjust the height of the textarea
     useEffect(() => {
         const textArea = textAreaRef.current;
         if (textArea) {
@@ -41,16 +40,12 @@ const TextInput = () => {
                 const link = document.createElement('a');
                 link.href = url;
                 link.setAttribute('download', 'presentation_LeanAi.pptx'); // or any other filename
-                // Append to html link element page
                 document.body.appendChild(link);
-                // Force download
                 link.click();
-                // Clean up and remove the link
                 link.parentNode.removeChild(link);
                 console.log("DOWNLOADED")
             }
-        )
-            .catch(err => console.error("Couldn't download pptx file", err))
+        ).catch(err => console.error("Couldn't download pptx file", err))
     };
 
     return (
@@ -61,8 +56,11 @@ const TextInput = () => {
                     className={styles.textArea}
                     value={inputValue}
                     onChange={handleInput}
+                    placeholder="Enter a prompt to generate a powerpoint frame"
                 />
-                <button type="submit" className={styles.submitButton}>Submit</button>
+                <div className={styles.buttonWrapper}>
+                    <button type="submit" className={styles.submitButton}>Submit</button>
+                </div>
             </div>
         </form>
     );
