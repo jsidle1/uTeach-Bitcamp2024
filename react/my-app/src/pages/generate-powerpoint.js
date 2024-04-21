@@ -1,16 +1,18 @@
 import React from 'react';
-import Link from 'next/link';
 import styles from "./generate-powerpoint.module.css";
 import TextInput from '@/components/TextInput';
-import Image from 'next/image'
-import logo from '/public/COW.png';
+import Link from 'next/link';
 
 const Home = () => {
 
   return (
     <div className={styles.background}>
       <div className={styles.titleBox}>
+      <Link href="/">
+        <div className={styles.titleBox}>
           <h1 className={styles.title}>uTeach</h1>
+        </div>
+      </Link>
       </div>
     <div className={styles.container}>
       <h1 className={styles.title}>Generate a Powerpoint</h1>
