@@ -6,14 +6,12 @@ import styles from '@/pages/presentation-page.module.css'
 
 function PresentationPage() {
     const router = useRouter();
-    const [file, setPptFile] = useState(null); // State to store PowerPoint file
+    const [pptFile, setPptFile] = useState(null); // State to store PowerPoint file
     const [audioFile, setAudioFile] = useState(null); // State to store audio file
-
     // Function to handle PowerPoint file input change
     const handlePptFileChange = (event) => {
         setPptFile(event.target.files[0]);
     };
-
     // Function to handle audio file input change
     const handleAudioFileChange = (event) => {
         setAudioFile(event.target.files[0]);
@@ -37,11 +35,9 @@ function PresentationPage() {
     // Function to handle form submission
     const handleSubmit = async (event) => {
         event.preventDefault();
-
         const formData = new FormData();
-        formData.append('file', file);
+        formData.append('pptFile', pptFile);
         formData.append('audioFile', audioFile);
-
         try {
             const response = await fetch("http://127.0.0.1:5000/upload", {
                 method: 'POST',
@@ -54,8 +50,8 @@ function PresentationPage() {
                 alert('Failed to upload file');
             }
         } catch (error) {
-            console.error('Error uploading file:', error);
-            alert('Error uploading file');
+            console.error('Error uploading files:', error);
+            alert('Failed to upload files.');
         }
     };
 
@@ -112,5 +108,4 @@ function PresentationPage() {
         </div>
     );
 }
-
 export default PresentationPage;
